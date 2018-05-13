@@ -1,0 +1,60 @@
+
+CREATE DATABASE BlogBdd CHARACTER SET 'utf8';
+
+-----------------------------------------------------
+
+CREATE TABLE User (
+    Id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(60) NOT NULL,
+    login VARCHAR(50) NOT NULL,
+    password VARCHAR(40) NOT NULL,
+    user_level VARCHAR(20) NOT NULL
+    
+)
+ENGINE=InnoDB;    
+
+------------------------------------------------------
+
+CREATE TABLE Post (
+    Id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    chapo VARCHAR(255) NOT NULL,
+    contents LONGTEXT NOT NULL,
+    last_update DATETIME NOT NULL,
+    author VARCHAR(60) NOT NULL,
+    user_id INT UNSIGNED NOT NULL,
+    CONSTRAINT fk_iduser          
+        FOREIGN KEY (user_id)            
+        REFERENCES User(Id) 
+    
+)
+ENGINE=InnoDB;    
+
+--------------------------------------------------------
+
+CREATE TABLE Comments (
+    Id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    author VARCHAR(60) NOT NULL,
+    contents TEXT NOT NULL,
+    comment_date DATETIME NOT NULL,
+    post_id INT UNSIGNED NOT NULL,
+    user_id INT UNSIGNED NOT NULL,
+    CONSTRAINT fk_idpost         
+        FOREIGN KEY (post_id)            
+        REFERENCES Post(Id) ,
+    CONSTRAINT fk_commentsiduser        
+        FOREIGN KEY (user_id)            
+        REFERENCES User(Id)
+    
+)
+ENGINE=InnoDB;   
+
+----------------------------------------------------------
+
+Insertion données de test : 
+
+INSERT INTO User VALUES (1,'Sylvain','Sylvain','123456','admin');
+INSERT INTO User VALUES (NULL,'USER1','USER1','123456','user');
+
+INSERT INTO Post VALUES (1,'Premier article pour tester','Ceci est un premier article pour tester le bon fonctionnement de la bdd et de l''affichage des données','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','2018-05-12 19:26:40','Sylvain',1);
+INSERT INTO Comments VALUES (1,'USER1','Premier commentaire pour tester','2018-05-12 19:30:33',1,2);

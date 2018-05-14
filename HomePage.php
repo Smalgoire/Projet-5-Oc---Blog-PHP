@@ -162,7 +162,8 @@
                             <h2>Le Projet</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/circle.png" class="img-responsive img-centered" alt="">
-                            <p>blablablabla</p>
+                            <p>blablablablablablabla</p>
+                            <p>blablablablablablabla</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>

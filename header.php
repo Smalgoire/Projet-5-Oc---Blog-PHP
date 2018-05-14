@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blog pro Sylvain M.</title>
+    <title>Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +54,7 @@
                         <a href="HomePage.php">Acceuil</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="ListeArticles.php">Articles</a>
+                        <a href="ListViewPostsController.php">Articles</a>
                     </li>
                 </ul>
             </div>

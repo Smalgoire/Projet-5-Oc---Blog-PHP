@@ -32,7 +32,7 @@
                     </div>
                     <div class="footer-col col-md-4">
                            <p><h3><a href="HomePage.php">Acceuil</a></h3></p>
-                           <p><h3><a href="ListeArticles.php">Articles</a></h3></p>
+                           <p><h3><a href="ListViewPostsController.php">Articles</a></h3></p>
                     </div>
                 </div>
             </div>
